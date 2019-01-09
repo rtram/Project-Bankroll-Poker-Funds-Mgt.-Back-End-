@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_01_08_230348) do
     t.text "location"
     t.integer "hours"
     t.float "amount"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -5,6 +5,7 @@ class CreateSessions < ActiveRecord::Migration[5.2]
       t.text :location
       t.integer :hours
       t.float :amount
+      t.integer :user_id
 
       t.timestamps
     end
