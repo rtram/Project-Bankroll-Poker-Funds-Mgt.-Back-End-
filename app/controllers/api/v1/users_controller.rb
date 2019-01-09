@@ -1,5 +1,9 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized
+
+  def show
+    render json: User.find(params[:id])
+  end
 
   def create
     @user = User.create(user_params)
