@@ -12,6 +12,8 @@ kevin = User.create(first_name:'Kevin', last_name:'Tram')
 
 t1 = Transaction.create(date:"1-11-11", amount: 11.11, sender_id: robin.id, recipient_id: sarah.id, message: "robin to sarah")
 
+100.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id: robin.id, recipient_id:sarah.id, message:"robin to sarah" )}
+
 # t.date "date"
 # t.float "amount"
 # t.integer "sender_id"
