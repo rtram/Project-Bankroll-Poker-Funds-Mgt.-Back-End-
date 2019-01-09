@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+robin = User.create(first_name:'Robin', last_name:'Tram')
+sarah = User.create(first_name:'Sarah', last_name:'Tram')
+kevin = User.create(first_name:'Kevin', last_name:'Tram')
+
+t1 = Transaction.create(date:"1-11-11", amount: 11.11, sender_id: robin.id, recipient_id: sarah.id, message: "robin to sarah")
+
+# t.date "date"
+# t.float "amount"
+# t.integer "sender_id"
+# t.integer "recipient_id"
+# t.text "message"
