@@ -6,21 +6,18 @@ kevin = User.create(username:'kevin' ,first_name:'Kevin', last_name:'Tram', pass
 specialk = User.create(username:'specialk' ,first_name:'Kevin', last_name:'Nguyen', password:'1')
 
 # # ROBIN'S SENT TRANSACTIONS
-# 25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:robin.id, recipient_id:sarah.id, message:"robin to sarah" )}
+25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:robin.id, recipient_id:sarah.id, message:"robin to sarah" )}
 #
-# 25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:robin.id, recipient_id:kevin.id, message:"robin to kevin" )}
+25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:robin.id, recipient_id:kevin.id, message:"robin to kevin" )}
 #
-# 25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:robin.id, recipient_id:specialk.id, message:"robin to specialk" )}
+25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:robin.id, recipient_id:specialk.id, message:"robin to specialk" )}
 #
 # # ROBIN'S RECEIVED TRANSACTIONS
-# 25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:sarah.id, recipient_id:robin.id, message:"robin to sarah" )}
+25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:sarah.id, recipient_id:robin.id, message:"robin to sarah" )}
 #
-# 25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:kevin.id, recipient_id:robin.id, message:"robin to kevin" )}
+25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:kevin.id, recipient_id:robin.id, message:"robin to kevin" )}
 #
-# 25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:specialk.id, recipient_id:robin.id, message:"robin to specialk" )}
-
-# ROBIN'S SESSIONS
-# 50.times {Session.create(date: "2019-1-1", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)}
+25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:specialk.id, recipient_id:robin.id, message:"robin to specialk" )}
 
 # 30 GRAPH SEEDS
 Session.create(date: "2019-1-2", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
@@ -79,18 +76,20 @@ Session.create(date: "2018-8-29", location:'MGM National Harbor', hours:Random.n
 Session.create(date: "2018-7-21", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
 Session.create(date: "2018-7-16", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
 Session.create(date: "2018-7-11", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+
+# TESTER
+Session.create(date: "2019-1-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-12-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-11-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-10-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-9-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-8-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-7-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
 Session.create(date: "2018-6-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-6-2", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-5-28", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-5-22", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-4-17", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-4-16", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-3-11", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-5-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-4-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
 Session.create(date: "2018-3-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-2-2", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-2-28", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-1-22", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
-Session.create(date: "2018-1-17", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
+Session.create(date: "2018-2-9", location:'MGM National Harbor', hours:Random.new.rand(12), amount: Random.new.rand(-500.00..500.00).round(2), user_id:robin.id)
 
 # # GAMES
-# Game.create(name: "Robin's Home Game", date: '2019-1-1', location:'5326 Poplar Valley Ct., Centreville, Va, 22030', host_id:robin.id)
+Game.create(name: "Robin's Home Game", date: '2019-1-1', location:'5326 Poplar Valley Ct., Centreville, Va, 22030', host_id:robin.id)
