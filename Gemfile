@@ -23,6 +23,8 @@ gem "active_model_serializers", "~> 0.10.7"
 
 gem "faker", "~> 1.9"
 
+gem 'pry'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

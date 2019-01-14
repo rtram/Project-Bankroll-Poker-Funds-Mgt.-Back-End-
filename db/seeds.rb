@@ -1,9 +1,9 @@
 
 # USERS
-robin = User.create(username:'rtram' ,first_name:'Robin', last_name:'Tram', password:'1')
-sarah = User.create(username:'sarah', first_name:'Sarah', last_name:'Tram', password:'1')
-kevin = User.create(username:'kevin' ,first_name:'Kevin', last_name:'Tram', password:'1')
-specialk = User.create(username:'specialk' ,first_name:'Kevin', last_name:'Nguyen', password:'1')
+robin = User.create(username:'rtram' ,first_name:'Robin', last_name:'Tram', password:'1', balance: 0.00)
+sarah = User.create(username:'sarah', first_name:'Sarah', last_name:'Tram', password:'1', balance: 0.00)
+kevin = User.create(username:'kevin' ,first_name:'Kevin', last_name:'Tram', password:'1', balance: 0.00)
+specialk = User.create(username:'specialk' ,first_name:'Kevin', last_name:'Nguyen', password:'1', balance: 0.00)
 
 # # ROBIN'S SENT TRANSACTIONS
 25.times {Transaction.create(date: "2019-1-1", amount: Random.new.rand(100.00).round(2), sender_id:robin.id, recipient_id:sarah.id, message:"robin to sarah" )}
