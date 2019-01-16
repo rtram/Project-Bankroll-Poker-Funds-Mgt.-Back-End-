@@ -3,8 +3,6 @@ class TransactionSerializer < ActiveModel::Serializer
 
   def recipient
     {
-      id: self.object.recipient.id,
-      username: self.object.recipient.username,
       first_name: self.object.recipient.first_name,
       last_name: self.object.recipient.last_name
     }
@@ -12,8 +10,6 @@ class TransactionSerializer < ActiveModel::Serializer
 
   def sender
     {
-      id: self.object.sender.id,
-      username: self.object.sender.username,
       first_name: self.object.sender.first_name,
       last_name: self.object.sender.last_name
     }

@@ -1,7 +1,7 @@
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create]
 
   def index
+    # NEED TO ADD AUTHENTICATION
     @user_list = User.all
     array = []
     @user_list.each do |user|
@@ -16,8 +16,19 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
-    byebug
-    render json: User.find(params[:id])
+    token = request.headers["Authentication"].split(" ")[1]
+    payload = decode(token)
+    user_id = payload["user_id"]
+
+    # FETCHES USER SESSIONS
+    if request.headers["userSessions"]
+      render json: User.find(params[:id]).sessions
+    # FETCHES USER TRANSACTIONS
+    elsif (request.headers["userBalance"])
+      @user = User.find(params[:id])
+      render json: UserSerializer.new(@user)
+    end
+
   end
 
   def create
@@ -31,12 +42,16 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    token = request.headers["Authentication"].split(" ")[1]
+    payload = decode(token)
+    user_id = payload["user_id"]
+
+    @user = User.find(user_id)
     @user.balance = params[:balance]
 
     @user.save
 
-    render json: @user
+    render json: @user.balance
   end
 
   private
