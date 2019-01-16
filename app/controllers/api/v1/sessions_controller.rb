@@ -1,15 +1,6 @@
 class Api::V1::SessionsController < ApplicationController
   skip_before_action :authorized
 
-  def index
-    render json: Session.all
-  end
-
-  def show
-    @session = Session.find(params[:id])
-    render json: @session
-  end
-
   def create
     @session = Session.new
     @session.date = params[:date]

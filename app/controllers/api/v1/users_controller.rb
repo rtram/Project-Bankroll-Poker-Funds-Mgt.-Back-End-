@@ -1,7 +1,5 @@
-require 'pry'
-
 class Api::V1::UsersController < ApplicationController
-  skip_before_action :authorized
+  skip_before_action :authorized, only: [:create]
 
   def index
     @user_list = User.all
@@ -18,6 +16,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def show
+    byebug
     render json: User.find(params[:id])
   end
 
