@@ -27,6 +27,10 @@ class Api::V1::UsersController < ApplicationController
     elsif (request.headers["userBalance"])
       @user = User.find(params[:id])
       render json: UserSerializer.new(@user)
+    # FETCHES SELECTED USER PROFILE TRANSACTIONS
+    elsif (request.headers["selectedProfile"])
+      @user = User.find(request.headers["selectedProfile"].to_i)
+      render json: UserSerializer.new(@user)
     end
 
   end
