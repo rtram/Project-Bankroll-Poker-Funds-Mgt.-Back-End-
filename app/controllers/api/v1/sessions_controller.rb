@@ -1,5 +1,4 @@
 class Api::V1::SessionsController < ApplicationController
-  # skip_before_action :authorized
 
   def create
     token = request.headers["Authentication"].split(" ")[1]

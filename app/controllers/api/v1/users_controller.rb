@@ -32,13 +32,15 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-      byebug
     @user = User.create(user_params)
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+    @user.save
     if @user.valid?
-      @token = encode_token(user_id: @user.id)
-      render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
+      @token = encode({ user_id: @user.id })
+      render json: { user: @user.id, jwt: @token }, status: :created
     else
-      render json: { error: 'failed to create user' }, status: :not_acceptable
+      render json: {errors: @user.errors.full_messages, params: params} , status: :not_acceptable
     end
   end
 
@@ -57,7 +59,7 @@ class Api::V1::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :password, :password_confirmation)
+    params.require(:user).permit(:username, :first_name, :last_name, :password, :password_confirmation, :balance)
   end
 
 end
