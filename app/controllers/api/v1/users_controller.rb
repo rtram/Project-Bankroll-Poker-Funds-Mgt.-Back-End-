@@ -53,8 +53,8 @@ class Api::V1::UsersController < ApplicationController
     payload = decode(token)
     user_id = payload["user_id"]
 
-    @user = User.find(user_id)
-    @user.balance = params[:balance]
+    @user = User.find(user_params[:id])
+    @user.balance = user_params[:balance]
 
     @user.save
 
@@ -63,7 +63,7 @@ class Api::V1::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :password, :password_confirmation, :balance)
+    params.require(:user).permit(:id, :username, :first_name, :last_name, :password, :password_confirmation, :balance)
   end
 
 end
