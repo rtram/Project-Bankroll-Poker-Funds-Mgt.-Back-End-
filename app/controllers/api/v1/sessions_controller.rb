@@ -13,8 +13,11 @@ class Api::V1::SessionsController < ApplicationController
     @session.user_id = user_id
 
     @session.save
-
-    render json: @session
+    if @session.errors
+      render json: {errors: @session.errors.full_messages}
+    else
+      render json: @session
+    end
   end
 
   def update
