@@ -13,7 +13,7 @@ class Api::V1::SessionsController < ApplicationController
     @session.user_id = user_id
 
     @session.save
-    if @session.errors
+    if @session.errors.full_messages.length > 0
       render json: {errors: @session.errors.full_messages}
     else
       render json: @session

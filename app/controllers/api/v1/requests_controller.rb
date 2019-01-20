@@ -18,13 +18,21 @@ class Api::V1::RequestsController < ApplicationController
     @request.requestee_id = request_params[:requestee_id]
 
     @request.save
-  
     render json: @request
+  end
+
+  def destroy
+    token = request.headers["Authentication"].split(" ")[1]
+    payload = decode(token)
+    user_id = payload["user_id"]
+
+    @request = Request.find(params[:id])
+    @request.destroy
   end
 
   private
   def request_params
-    params.require(:transaction).permit(:date, :message, :amount, :requestor_id, :requestee_id, :type)
+    params.require(:request).permit(:date, :message, :amount, :requestor_id, :requestee_id, :type)
   end
 
 end

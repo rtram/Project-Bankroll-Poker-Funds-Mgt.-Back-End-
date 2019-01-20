@@ -5,7 +5,8 @@ class RequestSerializer < ActiveModel::Serializer
     {
       id: self.object.requestor.id,
       first_name: self.object.requestor.first_name,
-      last_name: self.object.requestor.last_name
+      last_name: self.object.requestor.last_name,
+      balance: self.object.requestor.balance
     }
   end
 
