@@ -5,6 +5,7 @@ class Api::V1::LikesController < ApplicationController
     payload = decode(token)
     user_id = payload["user_id"]
 
+
     @like = Like.new
     @like.user_id = transaction_params[:user_id]
     @like.transaction_id = transaction_params[:transaction_id]
