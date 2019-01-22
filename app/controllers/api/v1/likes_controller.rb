@@ -1,5 +1,9 @@
 class Api::V1::LikesController < ApplicationController
 
+  def index
+    render json: Like.all
+  end
+
   def create
     token = request.headers["Authentication"].split(" ")[1]
     payload = decode(token)

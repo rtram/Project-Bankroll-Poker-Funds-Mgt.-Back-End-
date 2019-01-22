@@ -1,5 +1,9 @@
 class Api::V1::TransactionsController < ApplicationController
 
+  def index
+    render json: Transaction.all
+  end 
+
   def create
     token = request.headers["Authentication"].split(" ")[1]
     payload = decode(token)
