@@ -1,5 +1,5 @@
 class TransactionSerializer < ActiveModel::Serializer
-  attributes :id, :date, :message, :amount, :recipient, :sender
+  attributes :id, :date, :message, :amount, :recipient, :sender, :likes
 
   def recipient
     {
