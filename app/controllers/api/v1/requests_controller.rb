@@ -1,9 +1,5 @@
 class Api::V1::RequestsController < ApplicationController
 
-  def index
-    render json: Request.all
-  end
-
   def create
     token = request.headers["Authentication"].split(" ")[1]
     payload = decode(token)
@@ -27,6 +23,7 @@ class Api::V1::RequestsController < ApplicationController
     user_id = payload["user_id"]
 
     @request = Request.find(params[:id])
+
     @request.destroy
   end
 

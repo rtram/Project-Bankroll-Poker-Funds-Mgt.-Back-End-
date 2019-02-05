@@ -9,7 +9,8 @@ class Api::V1::UsersController < ApplicationController
         id: user.id,
         username: user.username,
         first_name: user.first_name,
-        last_name: user.last_name
+        last_name: user.last_name,
+        url: user.url
       }
     end
     render json: array
